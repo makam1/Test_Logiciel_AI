@@ -1,0 +1,32 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.2.0, pluggy-1.7.0 -- /home/lenovo/AI-TestGuard/.venv/bin/python3
+cachedir: .pytest_cache
+hypothesis profile 'default'
+rootdir: /home/lenovo/AI-TestGuard
+configfile: pytest.ini
+testpaths: tests
+plugins: hypothesis-6.170.15, cov-7.1.0
+collecting ... collected 20 items
+
+tests/test_preprocessing.py::test_required_columns PASSED                [  5%]
+tests/test_preprocessing.py::test_missing_column_rejected[Time] PASSED   [ 10%]
+tests/test_preprocessing.py::test_missing_column_rejected[V1] PASSED     [ 15%]
+tests/test_preprocessing.py::test_missing_column_rejected[V28] PASSED    [ 20%]
+tests/test_preprocessing.py::test_missing_column_rejected[Amount] PASSED [ 25%]
+tests/test_preprocessing.py::test_missing_column_rejected[Class] PASSED  [ 30%]
+tests/test_preprocessing.py::test_duplicate_column_rejected PASSED       [ 35%]
+tests/test_preprocessing.py::test_empty_data_rejected PASSED             [ 40%]
+tests/test_preprocessing.py::test_not_a_dataframe_rejected PASSED        [ 45%]
+tests/test_preprocessing.py::test_column_types PASSED                    [ 50%]
+tests/test_preprocessing.py::test_nan_rejected PASSED                    [ 55%]
+tests/test_preprocessing.py::test_infinite_rejected PASSED               [ 60%]
+tests/test_preprocessing.py::test_target_binary PASSED                   [ 65%]
+tests/test_preprocessing.py::test_target_invalid_rejected[2] PASSED      [ 70%]
+tests/test_preprocessing.py::test_target_invalid_rejected[-1] PASSED     [ 75%]
+tests/test_preprocessing.py::test_no_non_finite PASSED                   [ 80%]
+tests/test_preprocessing.py::test_single_observation PASSED              [ 85%]
+tests/test_preprocessing.py::test_dimensions_consistent PASSED           [ 90%]
+tests/test_preprocessing.py::test_prediction_mode_without_target PASSED  [ 95%]
+tests/test_preprocessing.py::test_standard_scaler PASSED                 [100%]
+
+============================== 20 passed in 0.81s ==============================
