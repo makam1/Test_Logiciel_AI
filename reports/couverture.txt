@@ -4,9 +4,13 @@ rootdir: /home/lenovo/AI-TestGuard
 configfile: pytest.ini
 testpaths: tests
 plugins: hypothesis-6.170.15, cov-7.1.0
-collected 20 items
+collected 35 items
 
-tests/test_preprocessing.py ....................                         [100%]
+tests/test_evaluation.py ....                                            [ 11%]
+tests/test_integration.py ...                                            [ 20%]
+tests/test_prediction.py ......                                          [ 37%]
+tests/test_preprocessing.py ....................                         [ 94%]
+tests/test_training.py ..                                                [100%]
 
 ================================ tests coverage ================================
 _______________ coverage: platform linux, python 3.14.4-final-0 ________________
@@ -14,10 +18,10 @@ _______________ coverage: platform linux, python 3.14.4-final-0 ________________
 Name                   Stmts   Miss  Cover   Missing
 ----------------------------------------------------
 app/__init__.py            0      0   100%
-app/evaluation.py          0      0   100%
-app/prediction.py          0      0   100%
+app/evaluation.py         13      1    92%   41
+app/prediction.py          6      0   100%
 app/preprocessing.py      31      0   100%
-app/training.py            0      0   100%
+app/training.py           27      2    93%   19, 40
 ----------------------------------------------------
-TOTAL                     31      0   100%
-============================== 20 passed in 1.32s ==============================
+TOTAL                     77      3    96%
+============================== 35 passed in 1.85s ==============================
