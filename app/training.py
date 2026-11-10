@@ -2,6 +2,7 @@
 
 from pathlib import Path
 
+import joblib
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
@@ -50,3 +51,15 @@ def train_model(X, y, model_name="logreg", random_state=RANDOM_STATE):
     pipeline = build_pipeline(model_name, random_state)
     pipeline.fit(X, y)
     return pipeline
+
+def save_pipeline(model, path):
+    """Sauvegarde le pipeline complet (scaler + modèle) sur disque."""
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    joblib.dump(model, path)
+
+
+def load_pipeline(path):
+    """Recharge un pipeline sauvegardé, avec une erreur explicite si absent."""
+    if not Path(path).is_file():
+        raise FileNotFoundError(f"Pipeline introuvable : {path}")
+    return joblib.load(path)
