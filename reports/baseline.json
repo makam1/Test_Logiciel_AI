@@ -1,0 +1,58 @@
+{
+  "created_at": "2026-11-10T22:52:16+00:00",
+  "code_version": "46b6a0a52bb59802fa134753237a2c1842d6cf7a (modifications non commitées)",
+  "model": {
+    "name": "logreg",
+    "params": {
+      "C": 1.0,
+      "class_weight": "balanced",
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 1000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "random_state": 42,
+  "split": {
+    "train": 0.6,
+    "validation": 0.2,
+    "test": 0.2,
+    "stratified": true
+  },
+  "threshold": 0.9991336553119329,
+  "metrics_validation": {
+    "accuracy": 0.9990695388072541,
+    "precision": 0.6991150442477876,
+    "recall": 0.8061224489795918,
+    "f1": 0.7488151658767772,
+    "roc_auc": 0.9805989117416835,
+    "pr_auc": 0.6857033653175553,
+    "fpr": 0.0005979283541142746,
+    "fnr": 0.19387755102040816,
+    "tn": 56829,
+    "fp": 34,
+    "fn": 19,
+    "tp": 79
+  },
+  "library_versions": {
+    "python": "3.14.4",
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1"
+  },
+  "dataset": {
+    "file": "data/creditcard.csv",
+    "rows": 284807,
+    "frauds": 492,
+    "fraud_rate": 0.001727485630620034,
+    "sha256": "76274b691b16a6c49d3f159c883398e03ccd6d1ee12d9d8ee38f4b4b98551a89"
+  }
+}
