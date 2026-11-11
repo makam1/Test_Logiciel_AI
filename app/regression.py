@@ -26,14 +26,16 @@ SUSPICIOUS_GAIN = 0.05
 
 
 def git_commit():
-    """Retourne le hash du commit courant, en signalant les modifications non commitées."""
+    """Retourne le hash du commit courant, en signalant les modifications non
+    commitées du code (le dossier reports/ est ignoré : rapports générés)."""
     try:
         commit = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
-        dirty = subprocess.check_output(["git", "status", "--porcelain"], text=True).strip()
+        dirty = subprocess.check_output(
+            ["git", "status", "--porcelain", "--", ".", ":(exclude)reports"], text=True
+        ).strip()
     except (subprocess.CalledProcessError, FileNotFoundError):
         return "inconnu"
     return f"{commit} (modifications non commitées)" if dirty else commit
-
 
 def load_baseline(path):
     """Charge la baseline, avec une erreur explicite si elle n'existe pas."""

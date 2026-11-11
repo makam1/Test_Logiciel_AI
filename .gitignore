@@ -4,3 +4,11 @@ data/*csv
 .coverage
 htmlcov/
 *.joblib
+
+.hypothesis/
+.pytest_cache/
+.ruff_cache/
+
+.hypothesis/
+.pytest_cache/
+.ruff_cache/
