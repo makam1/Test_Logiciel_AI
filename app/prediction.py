@@ -1,6 +1,10 @@
 """Production des prédictions de fraude."""
 
+import logging
+
 from app.preprocessing import preprocess_data
+
+logger = logging.getLogger(__name__)
 
 
 def predict_proba_fraud(model, X):
@@ -19,6 +23,12 @@ def predict_from_dataframe(model, df, threshold=0.5):
     """Valide un DataFrame brut (rejette toute entrée invalide), puis prédit.
 
     Les colonnes supplémentaires sont ignorées ; la colonne Class est facultative.
+    Les journaux ne contiennent que des comptages, jamais de valeurs de transactions.
     """
-    X, _ = preprocess_data(df, require_target=False)
+    try:
+        X, _ = preprocess_data(df, require_target=False)
+    except (TypeError, ValueError) as exc:
+        logger.warning("Entrée rejetée : %s", exc)
+        raise
+    logger.info("Prédiction sur %d transactions (seuil %.4f)", len(X), threshold)
     return predict_fraud(model, X, threshold)

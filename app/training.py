@@ -14,11 +14,13 @@ RANDOM_STATE = 42
 
 
 def load_data(path):
-    """Charge le CSV, avec une erreur explicite si le fichier est absent."""
+    """Charge le CSV, avec des erreurs explicites si le fichier est absent ou illisible."""
     if not Path(path).is_file():
         raise FileNotFoundError(f"Fichier de données introuvable : {path}")
-    return pd.read_csv(path)
-
+    try:
+        return pd.read_csv(path)
+    except (pd.errors.ParserError, pd.errors.EmptyDataError, UnicodeDecodeError) as exc:
+        raise ValueError(f"Fichier de données illisible : {path}") from exc
 
 def split_data(X, y, random_state=RANDOM_STATE):
     """Sépare en train (60 %), validation (20 %) et test (20 %), avec stratification."""

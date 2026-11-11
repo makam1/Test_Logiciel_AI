@@ -1,0 +1,44 @@
+{
+  "environnement": {
+    "plateforme": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "processeur": "non renseigné",
+    "coeurs_logiques": 8,
+    "ram_totale_go": 8.2,
+    "python": "3.14.4",
+    "scikit-learn": "1.9.1"
+  },
+  "latence_isolee_brute": {
+    "moyenne_ms": 0.9066076400031307,
+    "mediane_ms": 0.8749499997975363,
+    "p95_ms": 1.0958749996689219,
+    "p99_ms": 1.3846759997022668
+  },
+  "latence_isolee_avec_validation": {
+    "moyenne_ms": 2.0215480899987597,
+    "mediane_ms": 1.967599999943559,
+    "p95_ms": 2.4074650500097023,
+    "p99_ms": 2.5928290001456844
+  },
+  "debit_predictions_par_s": {
+    "1": 1145.3441758786041,
+    "100": 109661.1470412633,
+    "1000": 926354.3647728316,
+    "10000": 5761198.328987415
+  },
+  "taille_modele_mo": 0.002721,
+  "surcout_memoire_mo": 0.0,
+  "memoire_totale_processus_mo": 467.779584,
+  "seuils": {
+    "p95_ms": 50.0,
+    "debit_min": 1000.0,
+    "taille_max_mo": 10.0,
+    "memoire_max_mo": 200.0
+  },
+  "verdicts": {
+    "latence_p95_brute": true,
+    "latence_p95_avec_validation": true,
+    "debit_lot_100": true,
+    "taille_modele": true,
+    "memoire": true
+  }
+}
