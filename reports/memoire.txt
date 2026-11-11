@@ -1,0 +1,2 @@
+Mémoire après imports : 166.2 Mo
+Mémoire après chargement et prédiction : 168.4 Mo
