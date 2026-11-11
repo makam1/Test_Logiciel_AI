@@ -23,8 +23,8 @@ app/__init__.py            0      0   100%
 app/evaluation.py         13      1    92%   41
 app/prediction.py         10      0   100%
 app/preprocessing.py      31      0   100%
-app/regression.py         60      6    90%   30-35
+app/regression.py         60      6    90%   31-38
 app/training.py           35      1    97%   41
 ----------------------------------------------------
 TOTAL                    149      8    95%
-============================== 66 passed in 4.09s ==============================
+============================== 66 passed in 4.26s ==============================

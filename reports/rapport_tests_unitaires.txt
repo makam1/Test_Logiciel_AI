@@ -75,4 +75,4 @@ tests/test_robustness.py::test_latency_p95 PASSED                        [ 96%]
 tests/test_training.py::test_unknown_model_rejected PASSED               [ 98%]
 tests/test_training.py::test_load_data_missing_file PASSED               [100%]
 
-============================== 66 passed in 5.26s ==============================
+============================= 66 passed in 11.24s ==============================
