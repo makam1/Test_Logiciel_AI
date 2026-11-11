@@ -12,3 +12,5 @@ htmlcov/
 .hypothesis/
 .pytest_cache/
 .ruff_cache/
+
+*:Zone.Identifier
