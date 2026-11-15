@@ -22,7 +22,7 @@ def evaluate_model(y_true, y_pred, y_proba):
         "f1": float(f1_score(y_true, y_pred, zero_division=0)),
         "roc_auc": float(roc_auc_score(y_true, y_proba)),
         "pr_auc": float(average_precision_score(y_true, y_proba)),
-        "fpr": float(fp / (fp + tn)) if (fp + tn) > 0 else 0.0,
+        "fpr": float(fp / tn) if (fp + tn) > 0 else 0.0,
         "fnr": float(fn / (fn + tp)) if (fn + tp) > 0 else 0.0,
         "tn": int(tn),
         "fp": int(fp),
